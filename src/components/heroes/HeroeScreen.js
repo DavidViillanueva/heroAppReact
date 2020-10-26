@@ -32,6 +32,7 @@ const HeroeScreen = ({ history }) => {
         characters
     } = hero;
 
+
     return (
         <div className="row mt-5 animate__animated animate__fadeIn">
             <div className="col-4">

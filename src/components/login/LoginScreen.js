@@ -1,11 +1,24 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import { AuthContext } from '../../auth/AuthContext';
+import{ types} from '../../types/types';
 
 const LoginScreen = ({ history }) => {
+    const { dispatch } = useContext(AuthContext);
 
     const handleLogin = () => {
+    
+        const lastPath = localStorage.getItem('lastPath') || "/";
+        const action = {
+            type: types.login,
+            payload: {
+                name: 'David'
+            }
+        }
+        dispatch( action );
+        //seteo en el contexto de la app el usuario sin validacion
 
-        history.replace('/');
-    }
+        history.replace( lastPath );
+    };
 
     return (
         <div>
